@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanessa Ng - SEO Specialist Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #87CEEB 0%, #A8D5BA 50%, #FFF59D 100%);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .header .title {
+            font-size: 1.3em;
+            color: #34495e;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.6em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(to right, #87CEEB, #A8D5BA, #FFF59D) 1;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #87CEEB, #A8D5BA);
+        }
+
+        /* Summary Section */
+        .summary {
+            background: linear-gradient(135deg, #f0f8ff 0%, #f0fff0 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #87CEEB;
+        }
+
+        .summary p {
+            color: #444;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: #fafafa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #A8D5BA;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .company {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-left: 10px;
+        }
+
+        .date {
+            color: #95a5a6;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .responsibilities {
+            list-style: none;
+        }
+
+        .responsibilities li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .responsibilities li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #A8D5BA;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .responsibility-group {
+            margin-bottom: 15px;
+        }
+
+        .responsibility-group h4 {
+            color: #87CEEB;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #FFF59D;
+        }
+
+        .degree {
+            font-size: 1.2em;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .school {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .edu-date {
+            color: #95a5a6;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #87CEEB 0%, #A8D5BA 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95em;
+            box-shadow: 0 3px 10px rgba(135, 206, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(135, 206, 235, 0.4);
+        }
+
+        /* Projects Section */
+        .project-item {
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0fff0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #87CEEB;
+        }
+
+        .project-name {
+            font-size: 1.2em;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /* Certifications Section */
+        .cert-item {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #FFF59D;
+        }
+
+        .cert-name {
+            font-size: 1.2em;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .cert-issuer {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .cert-date {
+            color: #95a5a6;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .cert-id {
+            color: #95a5a6;
+            font-size: 0.85em;
+            margin-top: 3px;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #87CEEB;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .company {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+
+            .date {
+                margin-top: 5px;
+            }
+
+            .main-content {
+                padding: 25px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .experience-item:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            .skill-tag {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Vanessa Ng</h1>
+            <p class="title">Senior SEO Specialist | Digital Marketing Expert</p>
+            <div class="contact-info">
+                <a href="mailto:Vannesang97@gmail.com" class="contact-item">📧 Vannesang97@gmail.com</a>
+                <a href="tel:+60104675275" class="contact-item">📱 +60 10-467 5275</a>
+                <a href="https://www.linkedin.com/in/vanessan97/" class="contact-item" target="_blank">💼 LinkedIn</a>
+                <a href="https://nghuichen.carrd.co/" class="contact-item" target="_blank">🌐 Portfolio</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Professional Summary -->
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="summary">
+                    <p>Hey there! I'm Vanessa—a Penang-born SEO Specialist and your go-to for cracking the code on all things digital. With a degree in Management and Psychology from WOU, I've mastered the art of optimizing websites, driving organic traffic, and sprinkling a little magic into crafting engaging content. My secret? A mix of SEO geekery and a keen understanding of how humans actually think (and click).</p>
+                    <br>
+                    <p>Beyond the SEO spreadsheets and analytics dashboards, I'm a modern-day Renaissance soul. I dabble in coding, weave creativity into embroidery, swim like I'm chasing a mermaid dream, and even serenade the stars with my violin and flute. Before my digital escapades, I wore quite a few hats—HR Management, Recruitment Executive, and Sales Coordinator. Seeing others reach their potential gives me a serious case of the warm fuzzies.</p>
+                </div>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Senior SEO Specialist</span>
+                            <span class="company">@ Meshradix Sdn Bhd</span>
+                        </div>
+                        <span class="date">Feb 2025 - Current</span>
+                    </div>
+                    
+                    <div class="responsibility-group">
+                        <h4>1️⃣ SEO Strategy & Implementation</h4>
+                        <ul class="responsibilities">
+                            <li>Developed and executed data-driven SEO strategies to enhance organic search rankings</li>
+                            <li>Conducted comprehensive keyword research to identify high-ranking opportunities</li>
+                            <li>Optimized on-page elements including titles, meta descriptions, headers, and images</li>
+                            <li>Improved website structure and internal linking to enhance crawlability and user experience</li>
+                        </ul>
+                    </div>
+
+                    <div class="responsibility-group">
+                        <h4>2️⃣ Content Optimization & Development</h4>
+                        <ul class="responsibilities">
+                            <li>Collaborated with content teams to create SEO-friendly and high-quality content</li>
+                            <li>Optimized existing content to align with search intent and improve engagement</li>
+                            <li>Ensured content adhered to SEO best practices, enhancing visibility and reach</li>
+                        </ul>
+                    </div>
+
+                    <div class="responsibility-group">
+                        <h4>3️⃣ Technical SEO</h4>
+                        <ul class="responsibilities">
+                            <li>Performed in-depth website audits to identify and resolve technical SEO issues</li>
+                            <li>Optimized site speed, mobile responsiveness, and schema markup for better indexing</li>
+                            <li>Ensured seamless indexing and crawling to improve search engine visibility</li>
+                        </ul>
+                    </div>
+
+                    <div class="responsibility-group">
+                        <h4>4️⃣ Link Building & Off-Page SEO</h4>
+                        <ul class="responsibilities">
+                            <li>Developed and executed strategic link-building campaigns to enhance domain authority</li>
+                            <li>Conducted competitor backlink analysis to identify growth opportunities</li>
+                            <li>Monitored backlink profiles and disavowed toxic links to maintain SEO health</li>
+                        </ul>
+                    </div>
+
+                    <div class="responsibility-group">
+                        <h4>5️⃣ Analytics & Performance Tracking</h4>
+                        <ul class="responsibilities">
+                            <li>Tracked organic performance using Google Analytics, Google Search Console, and SEO tools</li>
+                            <li>Monitored keyword rankings, organic traffic, and conversion rates to drive optimizations</li>
+                            <li>Generated data-driven reports and insights to refine SEO strategies for continuous improvement</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Management with Psychology</div>
+                    <div class="school">Wawasan Open University</div>
+                    <div class="edu-date">Sep 2017 – Jul 2023</div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">People Management</span>
+                    <span class="skill-tag">Mentorship</span>
+                    <span class="skill-tag">SEO & SEA</span>
+                    <span class="skill-tag">Media Outreach</span>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="project-item">
+                    <div class="project-name">Mini SEO App</div>
+                    <p>Developed a personal SEO application to streamline optimization workflows and automate key SEO tasks.</p>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="cert-item">
+                    <div class="cert-name">Semrush SEO Crash Course with Brian Dean</div>
+                    <div class="cert-issuer">Semrush</div>
+                    <div class="cert-date">Issued Dec 2025 · Expires Dec 2026</div>
+                    <div class="cert-id">Credential ID: 682654</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Let's connect and make some digital magic happen! ✨</p>
+            <p>Email: <a href="mailto:Vannesang97@gmail.com">Vannesang97@gmail.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
